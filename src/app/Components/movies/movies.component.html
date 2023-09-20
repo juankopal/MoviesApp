@@ -1,2 +1,24 @@
-<p>movies works!</p>
-<img src="assets\imagenes\imagen_19-09-2023_16-46-41.jpg">
+<div class="container">
+
+  <h2 class="my-4">Todas las peliculas</h2>
+
+  <div class="row mt-2">
+    <div *ngFor="let element of movies" class="col-md-4">
+      <div class="card mb-3" style="width: 100%">
+        <img [src]="element.rutaImagen" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{element.nombre}}</h5>
+          <p class="card-text">
+            {{element.descripccion}}
+          </p>
+          <div class="d-flex mb-2">
+            <label>Fecha de lanzamiento:</label>
+            <span class="ms-2">{{element.fechaLanzamiento}}</span>
+          </div>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

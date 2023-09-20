@@ -26,4 +26,8 @@ export class LoginServiceService {
   addMovie(objMovie:FormData):Observable<any>{
     return this._http.post('http://localhost:5198/api/Usuario/AddMovie',objMovie);
   }
+
+  getListMovies():Observable<any>{
+    return this._http.get("http://localhost:5198/api/Usuario/GetListMovies");
+  }
 }
