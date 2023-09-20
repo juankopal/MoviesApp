@@ -1,0 +1,37 @@
+<section class="d-flex align-item-center justify-content-center">
+  <div class="col-3 p-3 login">
+    <form>
+
+      <div class="col-12 text-center">
+        <h4>Movies App</h4>
+      </div>
+
+      <div class="col-12">
+        <label>Usuario:</label>
+        <input type="text" class="form-control" name="User" [(ngModel)]="User">
+      </div>
+
+      <div class="col-12">
+        <label>Contraseña:</label>
+        <input type="text" class="form-control" name="Pass" [(ngModel)]="Pass">
+      </div>
+
+      <div class="col-12 mt-2">
+        <button class="btn btn-primary w-100" [disabled]="!User || !Pass" (click)="login()">Iniciar Sesion</button>
+      </div>
+
+      <div class="row d-flex align-item-center">
+
+        <div class="col-md-6 mt-2">
+          <button class="btn w-100">Recordar Contraseña</button>
+        </div>
+
+        <div class="col-md-6 d-flex register">
+          <a class="" (click)="Registrar()">Registrarse</a>
+        </div>
+
+      </div>
+
+    </form>
+  </div>
+</section>

@@ -1,0 +1,59 @@
+<div class="container">
+  <h3 class="text-center">Agregar Pelicula</h3>
+  <form class="mt-2 d-flex align-items-center justify-content-center" [formGroup]="formMovie">
+
+    <div class="col-md-6">
+
+      <div class="row mt-1">
+        <div class="col-6">
+          <label for="">Nombre de la pelicula</label>
+        </div>
+        <div class="col-6">
+          <input type="text" class="form-control" formControlName="nombre">
+        </div>
+      </div>
+
+      <div class="row mt-1">
+        <div class="col-6">
+          <label for="">Autor</label>
+        </div>
+        <div class="col-6">
+          <input type="text" class="form-control" formControlName="autor">
+        </div>
+      </div>
+
+      <div class="row mt-1">
+        <div class="col-6">
+          <label for="">Descripccion</label>
+        </div>
+        <div class="col-6">
+          <textarea cols="30" rows="5" class="form-control" formControlName="descripccion"></textarea>
+        </div>
+      </div>
+
+      <div class="row mt-1">
+        <div class="col-6">
+          <label for="">Fecha de lanzamiento</label>
+        </div>
+        <div class="col-6">
+          <input type="date" class="form-control" formControlName="fechaLanzamiento">
+        </div>
+      </div>
+
+      <div class="row mt-1">
+        <div class="col-6">
+          <label for="">Imagen</label>
+        </div>
+        <div class="col-6">
+          <input type="file" class="form-control" (change)="captirarImagen($event)">
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-end mt-1">
+        <button class="btn btn-primary" (click)="agregar()">agregar</button>
+      </div>
+
+    </div>
+
+  </form>
+</div>

@@ -1,0 +1,18 @@
+section{
+  height: 100vh;
+  align-items: center;
+  background-color: #EEEBEA;
+}
+
+.login{
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 5px 5px 15px gray;
+}
+
+.register{
+    flex-wrap: inherit;
+    align-content: center;
+    justify-content: center;
+    cursor: pointer;
+}
