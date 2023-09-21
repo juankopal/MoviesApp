@@ -8,6 +8,9 @@ import { LoginServiceService } from 'src/app/Services/login-service.service';
 })
 export class MoviesComponent implements OnInit {
   movies:any=[];
+  page:number=1;
+
+
   constructor(private loginService:LoginServiceService){
 
   }

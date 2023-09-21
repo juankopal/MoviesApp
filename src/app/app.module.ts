@@ -12,7 +12,9 @@ import { HomeComponent } from './Components/home/home.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { MoviesComponent } from './Components/movies/movies.component';
 import { PopularesComponent } from './Components/populares/populares.component';
-import { AgregarComponent } from './Components/agregar/agregar.component'
+import { AgregarComponent } from './Components/agregar/agregar.component';
+
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { AgregarComponent } from './Components/agregar/agregar.component'
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

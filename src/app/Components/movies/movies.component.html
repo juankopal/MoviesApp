@@ -3,7 +3,7 @@
   <h2 class="my-4">Todas las peliculas</h2>
 
   <div class="row mt-2">
-    <div *ngFor="let element of movies" class="col-md-4">
+    <div *ngFor="let element of movies | paginate: { itemsPerPage: 3, currentPage: page}" class="col-md-4">
       <div class="card mb-3" style="width: 100%">
         <img [src]="element.rutaImagen" class="card-img-top" alt="..." />
         <div class="card-body">
@@ -20,5 +20,10 @@
       </div>
     </div>
   </div>
+
+  <pagination-controls (pageChange)="page = $event"
+                      previousLabel="Anterior"
+                      nextLabel="Siguiente">
+  </pagination-controls>
 
 </div>
