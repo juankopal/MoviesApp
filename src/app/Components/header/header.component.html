@@ -9,19 +9,18 @@
         <li class="nav-item">
           <a class="nav-link" [ngClass]="{'active': isActiveItem === 'item1'}" (click)="setActiveItem('item1'); Home()">Todas</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" [ngClass]="{'active': isActiveItem === 'item2'}" (click)="setActiveItem('item2'); populares()">Populares</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" [ngClass]="{'active': isActiveItem === 'item3'}" (click)="setActiveItem('item3')">Recientes</a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link" [ngClass]="{'active': isActiveItem === 'item4'}" (click)="setActiveItem('item4'); Agregar()">Agregar</a>
         </li>
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="text" placeholder="Pelicula" (keyup)="buscar($event)">
-        <button class="btn btn-outline-success" type="submit">Buscar</button>
       </form>
       <div>
         <button class="btn btn-outline-danger ms-2">

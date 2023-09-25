@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SearchService } from 'src/app/Shared/search.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   isActiveItem: string = '';
 
-  constructor(private route:Router){}
+  constructor(private route:Router, private sharedService:SearchService){}
 
   ngOnInit(): void {
     this.setActiveItem("item1");
@@ -20,7 +21,8 @@ export class HeaderComponent implements OnInit {
   }
 
   buscar(event:any){
-    console.log((event.target as HTMLInputElement).value);
+    this.sharedService.sendSearchKeyUpEvent((event.target as HTMLInputElement).value);
+    //console.log((event.target as HTMLInputElement).value);
   }
 
   Home(){
