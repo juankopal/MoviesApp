@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Movies } from 'src/app/Model/movies';
 import { LoginServiceService } from 'src/app/Services/login-service.service';
@@ -15,7 +16,9 @@ export class MoviesComponent implements OnInit {
   searchMovie ="";
   private subscription!: Subscription;
 
-  constructor(private loginService:LoginServiceService, private sharedService:SearchService){
+  constructor(private loginService:LoginServiceService,
+              private sharedService:SearchService,
+              private router:Router){
 
   }
   ngOnInit(): void {
@@ -45,5 +48,9 @@ export class MoviesComponent implements OnInit {
         }
       }
     });
+  }
+
+  goMovieDetail(id:string){
+    this.router.navigate(["MovieDetail",id])
   }
 }

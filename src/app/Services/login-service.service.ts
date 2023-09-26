@@ -30,4 +30,8 @@ export class LoginServiceService {
   getListMovies():Observable<any>{
     return this._http.get("http://localhost:5198/api/Usuario/GetListMovies");
   }
+
+  getMovie(idMovie:number):Observable<any>{
+    return this._http.get("http://localhost:5198/api/Usuario/GetMovie/"+idMovie);
+  }
 }

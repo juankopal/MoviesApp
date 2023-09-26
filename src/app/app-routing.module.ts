@@ -7,6 +7,7 @@ import { authGuard } from './Guards/auth.guard';
 import { MoviesComponent } from './Components/movies/movies.component';
 import { PopularesComponent } from './Components/populares/populares.component';
 import { AgregarComponent } from './Components/agregar/agregar.component';
+import { MovieDetailsComponent } from './Components/movie-details/movie-details.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
       { path: 'Agregar', component: AgregarComponent },
     ],
   },
+  {path:'MovieDetail/:idMovie', component:MovieDetailsComponent}
 ];
 
 @NgModule({

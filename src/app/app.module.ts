@@ -15,6 +15,7 @@ import { PopularesComponent } from './Components/populares/populares.component';
 import { AgregarComponent } from './Components/agregar/agregar.component';
 
 import {NgxPaginationModule} from 'ngx-pagination';
+import { MovieDetailsComponent } from './Components/movie-details/movie-details.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     HeaderComponent,
     MoviesComponent,
     PopularesComponent,
-    AgregarComponent
+    AgregarComponent,
+    MovieDetailsComponent
   ],
   imports: [
     BrowserModule,

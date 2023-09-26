@@ -15,7 +15,7 @@
             <label>Fecha de lanzamiento:</label>
             <span class="ms-2">{{element.fechaLanzamiento}}</span>
           </div>
-          <a href="#" class="btn btn-primary">Detalle</a>
+          <a (click)="goMovieDetail(element.idMovie.toString())" class="btn btn-primary">Detalle</a>
         </div>
       </div>
     </div>
