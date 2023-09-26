@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Movies } from 'src/app/Model/movies';
 import { LoginServiceService } from 'src/app/Services/login-service.service';
 
@@ -9,9 +9,18 @@ import { LoginServiceService } from 'src/app/Services/login-service.service';
   styleUrls: ['./movie-details.component.scss']
 })
 export class MovieDetailsComponent implements OnInit {
-  movie!:Movies
+  movie: Movies = {
+    autor:"",
+    nombre:"",
+    descripccion:"",
+    fechaLanzamiento:"",
+    idMovie:0,
+    nombreImagenOriginal:"",
+    nombreImagenServidor:"",
+    rutaImagen:""
+  }
   id!: number;
-  constructor(private route: ActivatedRoute, private loginService:LoginServiceService){
+  constructor(private route: ActivatedRoute, private loginService:LoginServiceService, private router:Router){
 
   }
 
@@ -19,6 +28,7 @@ export class MovieDetailsComponent implements OnInit {
     this.route.params.subscribe(
       (params)=>{
         this.id = params['idMovie'];
+
       }
     );
     this.consultarMovie(this.id);
@@ -29,10 +39,14 @@ export class MovieDetailsComponent implements OnInit {
       {
         next:(response)=>{
           this.movie = response.data;
-          console.log(this.movie);
+          this.movie.rutaImagen=this.movie.rutaImagen.substring(this.movie.rutaImagen.indexOf("\\assets"))+"\\"+this.movie.nombreImagenServidor;
         }
       }
     );
+  }
+
+  Volver(){
+    this.router.navigate(["Home"]);
   }
 
 }
